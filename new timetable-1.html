@@ -1,9 +1,14 @@
 <style>
-body {background-image:url('background.png')}
-  th {border: 2px;}
-  td {border: 2px;}
-  tr {border: 2px;}
+body {background-image:url('background.png';background-repeat: no-repeat;)}
+  tr {
+  border-bottom: 1px solid black;
+  }
   table {border: 2px;}
+  @media screen and (max-width: 414px) { body {
+  background-image: url(mobbackground.png');
+  background-repeat: no-repeat;
+  background-size: 500px;}
+  }
 </style>
 <table>
     <tr>
