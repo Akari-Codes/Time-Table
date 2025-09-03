@@ -169,13 +169,13 @@ body {background-color:black;background-image:linear-gradient(
   document.getElementById(day + "_p4").style.display = "block";
   document.getElementById(day + "_p5").style.display = "block";
   document.getElementById(day + "_p6").style.display = "block";
-  return;
 }
   function checkday() {
   var day = document.getElementById("day").value;
   if(day == "all") {changeall()} else{const days = ["mon","tue","wed","thu","fri"];let index = Array.IndexOf(days,day);changeday(days,index)};
 }
-function changeall(){if(day == "all") {var day = "mon";
+
+if(day == "all") {var day = "mon";
 changeday_ac(day);
 var day = "tue";
 changeday_ac(day);
@@ -184,6 +184,5 @@ changeday_ac(day);
 var day = "thu";
 changeday_ac(day);
 var day = "fri";
-changeday_ac(day)} else{checkday()};retun}
-changeall()
+changeday_ac(day)} else{checkday()};retun
 </script>
