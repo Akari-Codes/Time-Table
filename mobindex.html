@@ -20,6 +20,14 @@ body {background-color:black;background-image:linear-gradient(
   td {max-width: 300px;}
   th {max-width: 300px;}
 </style>
+<select id="day" onclick="checkday()">
+  <option value="all">All Days</option>
+  <option value="mon">Monday</option>
+  <option value="tue">Tuesday</option>
+  <option value="wed">Wednesday</option>
+  <option value="thu">Thurday</option>
+  <option value="fri">Friday</option>
+</select>
 <table>
     <tr>
       <th>Time</th>
@@ -29,6 +37,7 @@ body {background-color:black;background-image:linear-gradient(
       <th id="thu">Thursday</th>
       <th id="fri">Friday</th>
     </tr>
+    <br>
     <tr>
       <td> P1</td>
       <td id="mon_p1">Engineering<br><br>JCL<font style="float:right">3106</font></td>
@@ -37,6 +46,7 @@ body {background-color:black;background-image:linear-gradient(
       <td id="thu_p1"><br>Free Period<br><br></td>
       <td id="fri_p1"><br>Free Period<br><br></td>
     </tr>
+    <br>
     <tr>
         <td> Break</td>
         <td id="mon_pb"><br>Break<br><br></td>
@@ -45,6 +55,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_pb"><br>Break<br><br></td>
         <td id="fri_pb"><br>Break<br><br></td>
     </tr>
+    <br>
     <tr>
         <td> P2</td>
         <td id="mon_p2"><br>Free Period<br><br></td>
@@ -53,6 +64,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_p2">Engineering<br><br>LFR<font style="float:right">3106</font></td>
         <td id="fri_p2">Engineering<br><br>LFR<font style="float:right">2107</font></td>
     </tr>
+    <br>
     <tr>
         <td> P3</td>
         <td id="mon_p3">Electrical &<br>Electronics<br>LFR<font style="float:right">2103</font></td>
@@ -61,6 +73,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_p3">Engineering<br><br>CFR<font style="float:right">1001</font></td>
         <td id="fri_p3">Engineering<br><br>LFR<font style="float:right">2107</font></td>
     </tr>
+    <br>
     <tr>
         <td> Lunch</td>
         <td id="mon_pl"><br>Lunch<br><br></td>
@@ -69,6 +82,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_pl"><br>Lunch<br><br></td>
         <td id="fri_pl"><br>Lunch<br><br></td>
     </tr>
+    <br>
     <tr>
         <td> P4</td>
         <td id="mon_p4"><br>Free Period<br><br></td>
@@ -77,6 +91,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_p4">Electrical &<br>Electronics<br>LFR<font style="float:right">2103</font></td>
         <td id="fri_p4">Computer<br>Science<br>ASA<font style="float:right">4004</font></td>
     </tr>
+    <br>
     <tr>
         <td> P5</td>
         <td id="mon_p5">Computer<br>Science<br>ASA<font style="float:right">1008</font></td>
@@ -85,6 +100,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="thu_p5">Electrical &<br>Electronics<br>LFR<font style="float:right">2103</font></td>
         <td id="fri_p5"><br>Free Period<br><br></td>
     </tr>
+    <br>
     <tr>
         <td> P6</td>
         <td id="mon_p6"><br>Free Period<br><br></td>
@@ -94,3 +110,87 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_p6"><br>Free Period<br><br></td>
     </tr>
   </table>
+<script>
+  function changeday(days,index) {
+  if(index =! -1) {
+  var day = days[0];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[1];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[2];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[3];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[4];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[index];
+  changeday_ac(day);
+}
+}
+  function changeday_ac(day) {
+  document.getElementById(day).style.display = "block";
+  document.getElementById(day + "_p1").style.display = "block";
+  document.getElementById(day + "_pb").style.display = "block";
+  document.getElementById(day + "_p2").style.display = "block";
+  document.getElementById(day + "_p3").style.display = "block";
+  document.getElementById(day + "_pl").style.display = "block";
+  document.getElementById(day + "_p4").style.display = "block";
+  document.getElementById(day + "_p5").style.display = "block";
+  document.getElementById(day + "_p6").style.display = "block";
+  return;
+}
+  function checkday() {
+  var day = document.getElementById("day").value;
+  if(day == "all") {changeall()} else{const days = ["mon","tue","wed","thu","fri"];let index = Array.IndexOf(days, day);changeday(days,index)};
+}
+if(day == "all") {var day = "mon";
+changeday_ac(day);
+var day = "tue";
+changeday_ac(day);
+var day = "wed";
+changeday_ac(day);
+var day = "thu";
+changeday_ac(day);
+var day = "fri";
+changeday_ac(day)} else{checkday()};
+</script>
