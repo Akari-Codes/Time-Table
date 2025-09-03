@@ -4,7 +4,7 @@
 body {background-color:black;background-image:linear-gradient(
           rgba(0, 0, 0, 0.4), 
           rgba(0, 0, 0, 0.4)
-        ),url('background.jpg');font-family:Arial, Helvetica, sans-serif;background-repeat: no-repeat;color:magenta;background-size:100%;}
+        ),url('mobbackground.jpg');font-family:Arial, Helvetica, sans-serif;background-repeat: no-repeat;color:magenta;background-size:100%;}
   tr {
   border-bottom: 2px solid black;
   }
@@ -28,7 +28,7 @@ body {background-color:black;background-image:linear-gradient(
   <option value="thu">Thurday</option>
   <option value="fri">Friday</option>
 </select>
-<table>
+<table id="time_table" style="font-size: 13px">
     <tr>
       <th>Time</th>
       <th id="mon">Monday</th>
@@ -38,7 +38,7 @@ body {background-color:black;background-image:linear-gradient(
       <th id="fri">Friday</th>
     </tr>
     <tr>
-      <td> P1</td>
+      <td> P1 09:00 - 10:00</td>
       <td id="mon_p1">Engineering<br><br>JCL<font style="float:right">3106</font></td>
       <td id="tue_p1">Computer<br>Science<br>ASA<font style="float:right">2001</font></td>
       <td id="wed_p1">Computer<br>Science<br>ASA<font style="float:right">4004</font></td>
@@ -46,7 +46,7 @@ body {background-color:black;background-image:linear-gradient(
       <td id="fri_p1"><br>Free Period<br><br></td>
     </tr>
     <tr>
-        <td> Break</td>
+        <td> Break 10:00 - 10:15</td>
         <td id="mon_pb"><br>Break<br><br></td>
         <td id="tue_pb"><br>Break<br><br></td>
         <td id="wed_pb"><br>Break<br><br></td>
@@ -54,7 +54,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_pb"><br>Break<br><br></td>
     </tr>
     <tr>
-        <td> P2</td>
+        <td> P2 10:15 - 11:15</td>
         <td id="mon_p2"><br>Free Period<br><br></td>
         <td id="tue_p2">Personal<br>Development<br>SKS <font style="float:right">002B</font></td>
         <td id="wed_p2"><br>Free Period<br><br></td>
@@ -62,7 +62,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_p2">Engineering<br><br>LFR<font style="float:right">2107</font></td>
     </tr>
     <tr>
-        <td> P3</td>
+        <td> P3 11:15 - 12:10</td>
         <td id="mon_p3">Electrical &<br>Electronics<br>LFR<font style="float:right">2103</font></td>
         <td id="tue_p3">Engineering<br><br>JCL<font style="float:right">1107</font></td>
         <td id="wed_p3">Computer<br>Science<br>ASA<font style="float:right">4002</font></td>
@@ -70,7 +70,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_p3">Engineering<br><br>LFR<font style="float:right">2107</font></td>
     </tr>
     <tr>
-        <td> Lunch</td>
+        <td> Lunch 12:10 - 12:40</td>
         <td id="mon_pl"><br>Lunch<br><br></td>
         <td id="tue_pl"><br>Lunch<br><br></td>
         <td id="wed_pl"><br>Lunch<br><br></td>
@@ -78,7 +78,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_pl"><br>Lunch<br><br></td>
     </tr>
     <tr>
-        <td> P4</td>
+        <td> P4 12:40 - 13:40</td>
         <td id="mon_p4"><br>Free Period<br><br></td>
         <td id="tue_p4">Electrical &<br>Electronics<br>LFR<font style="float:right">2103</font></td>
         <td id="wed_p4"><br>Free Period<br><br></td>
@@ -86,7 +86,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_p4">Computer<br>Science<br>ASA<font style="float:right">4004</font></td>
     </tr>
     <tr>
-        <td> P5</td>
+        <td> P5 13:40 - 14:35</td>
         <td id="mon_p5">Computer<br>Science<br>ASA<font style="float:right">1008</font></td>
         <td id="tue_p5"><br>Free Period<br><br></td>
         <td id="wed_p5"><br>Free Period<br><br></td>
@@ -94,7 +94,7 @@ body {background-color:black;background-image:linear-gradient(
         <td id="fri_p5"><br>Free Period<br><br></td>
     </tr>
     <tr>
-        <td> P6</td>
+        <td> P6 14:35 - 15:30</td>
         <td id="mon_p6"><br>Free Period<br><br></td>
         <td id="tue_p6"><br>Free Period<br><br></td>
         <td id="wed_p6"><br>Free Period<br><br></td>
@@ -104,7 +104,7 @@ body {background-color:black;background-image:linear-gradient(
   </table>
 <script>
   function changeday(days,index) {
-  if(index =! -1) {
+  document.getElementById("time_table").fontsize = "20px"
   var day = days[0];
   document.getElementById(day).style.display = "none";
   document.getElementById(day + "_p1").style.display = "none";
@@ -158,8 +158,60 @@ body {background-color:black;background-image:linear-gradient(
   var day = days[index];
   changeday_ac(day);
 }
-}
-  function changeday_ac(day) {
+  function hidedays(days) {
+  var day = days[0];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[1];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[2];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[3];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  var day = days[4];
+  document.getElementById(day).style.display = "none";
+  document.getElementById(day + "_p1").style.display = "none";
+  document.getElementById(day + "_pb").style.display = "none";
+  document.getElementById(day + "_p2").style.display = "none";
+  document.getElementById(day + "_p3").style.display = "none";
+  document.getElementById(day + "_pl").style.display = "none";
+  document.getElementById(day + "_p4").style.display = "none";
+  document.getElementById(day + "_p5").style.display = "none";
+  document.getElementById(day + "_p6").style.display = "none";
+  }
+  function changeday_ac(day) {document.getElementById('time_table').fontsize = "20px"
+  document.getElementById("time_table").fontsize = "20px"
   document.getElementById(day).style.display = "block";
   document.getElementById(day + "_p1").style.display = "block";
   document.getElementById(day + "_pb").style.display = "block";
@@ -169,20 +221,47 @@ body {background-color:black;background-image:linear-gradient(
   document.getElementById(day + "_p4").style.display = "block";
   document.getElementById(day + "_p5").style.display = "block";
   document.getElementById(day + "_p6").style.display = "block";
-  return;
+}
+function changeday_acd(day) {
+  document.getElementById("time_table").fontsize = "13px"
+  document.getElementById(day).style.display = "";
+  document.getElementById(day + "_p1").style.display = "";
+  document.getElementById(day + "_pb").style.display = "";
+  document.getElementById(day + "_p2").style.display = "";
+  document.getElementById(day + "_p3").style.display = "";
+  document.getElementById(day + "_pl").style.display = "";
+  document.getElementById(day + "_p4").style.display = "";
+  document.getElementById(day + "_p5").style.display = "";
+  document.getElementById(day + "_p6").style.display = "";
 }
   function checkday() {
   var day = document.getElementById("day").value;
-  if(day == "all") {changeall()} else{const days = ["mon","tue","wed","thu","fri"];let index = Array.IndexOf(days, day);changeday(days,index)};
+  if(day == "all") {changeall()} else{const days = ["mon","tue","wed","thu","fri"];let index = days.indexOf(day);changeday(days,index)};
 }
-if(day == "all") {var day = "mon";
-changeday_ac(day);
+function changeall() {
+const days = ["mon","tue","wed","thu","fri"];
+hidedays(days);
+var day = "mon";
+changeday_acd(day);
 var day = "tue";
-changeday_ac(day);
+changeday_acd(day);
 var day = "wed";
-changeday_ac(day);
+changeday_acd(day);
 var day = "thu";
-changeday_ac(day);
+changeday_acd(day);
 var day = "fri";
-changeday_ac(day)} else{checkday()};
+changeday_acd(day)
+}
+if(day == "all") {
+const days = ["mon","tue","wed","thu","fri"];
+hidedays(days);var day = "mon";
+changeday_acd(day);
+var day = "tue";
+changeday_acd(day);
+var day = "wed";
+changeday_acd(day);
+var day = "thu";
+changeday_acd(day);
+var day = "fri";
+changeday_acd(day)} else{checkday()};
 </script>
