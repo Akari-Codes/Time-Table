@@ -17,6 +17,8 @@ body {background-color:black;background-image:linear-gradient(
   <option value="thu">Thurday</option>
   <option value="fri">Friday</option>
 </select>
+<br>
+<p id="notin"></p>
 <table>
     <tr>
         <th>Time</th>
@@ -238,6 +240,30 @@ changeday_acd(day);
 var day = "fri";
 changeday_acd(day)
 }
+function current_lesson() {
+  let day = getDay();
+  if(day == 5 || day == 6) {document.getElementById('notin').innerHTML = "You are Currntly Outside of College Hours"} else{
+  let timeh = getHours();
+  let timem = getMinutes();
+  let daya = day -2;
+  const days = ["mon","tue","wed","thu","fri"];
+  if((timeh == 9 && timem >= 2) || (timeh == 9 && timem <= 58)) {var period = "1"};
+  if((timeh == 10 && timem >= 0) || (timeh == 10 && timem <= 13)) {var period = "b"};
+  if((timeh == 10 && timem >= 14) || (timeh == 11 && timem <= 13)) {var period = "2"};
+  if((timeh == 11 && timem >= 14) || (timeh == 12 && timem <= 8)) {var period = "3"};
+  if((timeh == 12 && timem >= 9) || (timeh == 12 && timem <= 38)) {var period = "l"};
+  if((timeh == 12 && timem >= 39) || (timeh == 13 && timem <= 38)) {var period = "4"};
+  if((timeh == 13 && timem >= 39) || (timeh == 14 && timem <= 33)) {var period = "5"};
+  if((timeh == 14 && timem >= 34) || (timeh == 15 && timem <= 30)) {var period = "6"};
+  if((timeh >= 15 && timem >= 31) || (timeh <= 8 && timem <= 58)) {document.getElementById('notin').innerHTML = "You are Currntly Outside of College Hours"} else{
+  document.getElementById(days[daya] + "_p" + period).style.backgroundColor = "purple";
+  document.getElementById(days[daya] + "_p" + period).style.color = "White";
+  document.getElementById(days[daya] + "_p" + period).style.fontWeight = "bold";
+  };
+  };
+};
+
+
 var h = window.screen.height;
 var w = window.screen.width;
 if(h <= 650) {if(w <= 650){location.replace("mobindex.html");}};
@@ -254,4 +280,5 @@ var day = "thu";
 changeday_acd(day);
 var day = "fri";
 changeday_acd(day)} else{checkday()};
+current_lesson();
 </script>
