@@ -241,10 +241,10 @@ var day = "fri";
 changeday_acd(day)
 }
 function current_lesson() {
-  let day = getDay();
+  let day = Day.getDay();
   if(day == 5 || day == 6) {document.getElementById('notin').innerHTML = "You are Currntly Outside of College Hours"} else{
-  let timeh = getHours();
-  let timem = getMinutes();
+  let timeh = Day.getHours();
+  let timem = Day.getMinutes();
   let daya = day -2;
   const days = ["mon","tue","wed","thu","fri"];
   if((timeh == 9 && timem >= 2) || (timeh == 9 && timem <= 58)) {var period = "1"};
